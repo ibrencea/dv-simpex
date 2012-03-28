@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nr auto:</b>
+  <%= @itp.nr_auto %>
+</p>
+
+<p>
+  <b>Data expirarii:</b>
+  <%= @itp.data_expirarii.strftime('%d %b %Y') %>
+</p>
+
+<p>
+  <b>Programare:</b>
+  <%= @itp.programare.strftime('%d %b %Y') %>
+</p>
+
+<p>
+  <b>Observatii:</b>
+  <%= @itp.observatii %>
+</p>
+
+<p>
+  <b>Client:</b>
+  <%= @itp.client_id %>
+</p>
+
+<p>
+  <b>Creat:</b>
+  <%= @itp.created_at.strftime('%d %b %Y') %>
+</p>
+
+<p>
+  <b>Modificat:</b>
+  <%= @itp.updated_at.strftime('%d %b %Y') %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_itp_path(@itp) %> |
+<%= link_to 'Back', itps_path %>

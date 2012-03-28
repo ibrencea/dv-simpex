@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nr_auto: MyString
+  data_expirarii: 2012-03-28 12:20:42
+  programare: 2012-03-28 12:20:42
+  observatii: MyText
+  client_id: 
+
+two:
+  nr_auto: MyString
+  data_expirarii: 2012-03-28 12:20:42
+  programare: 2012-03-28 12:20:42
+  observatii: MyText
+  client_id: 

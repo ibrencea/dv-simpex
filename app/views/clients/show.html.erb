@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nume:</b>
+  <%= @client.nume %>
+</p>
+
+<p>
+  <b>Prenume:</b>
+  <%= @client.prenume %>
+</p>
+
+<p>
+  <b>Telefon:</b>
+  <%= @client.telefon %>
+</p>
+
+<p>
+  <b>Mail:</b>
+  <%= @client.mail %>
+</p>
+
+<p>
+  <b>Creat:</b>
+  <%= @client.created_at.strftime('%d %b %Y') %>
+</p>
+
+<p>
+  <b>Modificat:</b>
+  <%= @client.updated_at.strftime('%d %b %Y') %>
+</p>
+
+
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %>

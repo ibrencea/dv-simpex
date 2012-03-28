@@ -1,0 +1,49 @@
+<h1>DV-Simpex</h1>
+
+<%= link_to 'Vizualizati intrarile din baza de date', itps_path %> <br />
+
+<br />
+
+<%= form_tag itps_path, :method => 'get' do %>
+  Nr auto:
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Cautati", :name => nil %>
+<% end %>
+
+<br />
+
+<%= link_to 'Adaugati un client nou', clients_path %> 
+
+<br /> <br />
+
+<table>
+  <tr>
+    <th>Nr auto</th>
+    <th>Data expirarii</th>
+    <th>Programare</th>
+    <th>Nume</th>
+    <th>Prenume</th>
+    <th>Telefon</th>
+    <th>Mail</th>
+    <th>Observatii</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @itps.each do |itp| %>
+  <tr>
+    <td><%= itp.nr_auto %></td>
+    <td><%= itp.data_expirarii.strftime('%d %b %Y') %></td>
+    <td><%= itp.programare.strftime('%d %b %Y') %></td>
+    <td><%= itp.client.nume %></td>
+    <td><%= itp.client.prenume %></td>
+    <td><%= itp.client.telefon %></td>
+    <td><%= itp.client.mail %></td>
+    <td><%= itp.observatii %></td>
+    <td><%= link_to 'Modificati date client', edit_client_path(itp.client) %></td>
+    <td><%= link_to 'Modificati date masina', edit_itp_path(itp) %></td>
+    <td><%= link_to 'Stergeti', itp, confirm: 'Suneti sigur?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>

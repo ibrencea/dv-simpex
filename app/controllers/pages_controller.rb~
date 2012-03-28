@@ -1,0 +1,7 @@
+class PagesController < ApplicationController
+  def index
+    @itps = Itp.find(:all, :order => "data_expirarii", :where => "data_expirarii > #{Time.zone.now}") 
+  end
+  
+
+end

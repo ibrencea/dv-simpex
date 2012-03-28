@@ -1,0 +1,37 @@
+<h1>ITP-uri</h1>
+
+<table>
+  <tr>
+    <th>Nr auto</th>
+    <th>Data expirarii</th>
+    <th>Programare</th>
+    <th>Observatii</th>
+    <th>Telefon</th>
+    <th>Telefon</th>
+    <th>Creat</th>
+    <th>Modificat</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @itps.each do |itp| %>
+  <tr>
+    <td><%= itp.nr_auto %></td>
+    <td><%= itp.data_expirarii.strftime('%d %b %Y') %></td>
+    <td><%= itp.programare.strftime('%d %b %Y') %></td>
+    <td><%= itp.observatii %></td>
+    <td><%= itp.client.telefon %></td>
+    <td><%= itp.client.mail %></td>
+    <td><%= itp.created_at.strftime('%d %b %Y') %></td>
+    <td><%= itp.updated_at.strftime('%d %b %Y') %></td>
+    <td><%= link_to 'Modificati date client', edit_client_path(itp.client) %></td>
+    <td><%= link_to 'Modificati date masina', edit_itp_path(itp) %></td>
+    <td><%= link_to 'Stergeti', itp, confirm: 'Sunteti sigur?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Adaugati', new_itp_path %>
